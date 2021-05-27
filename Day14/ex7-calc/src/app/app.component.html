@@ -1,0 +1,13 @@
+<input #myInputA (input)="setA(myInputA.value)" type="number" />
+
+<input #myInputB (input)="setB(myInputB.value)" type="number" />
+
+<button (click)="calculator()">Go!</button>
+
+<div></div>
+
+<div *ngIf="show == true">
+  <p>{{ a }} + {{ b }} = {{ results[0] }}</p>
+  <p>{{ a }} - {{ b }} = {{ results[1] }}</p>
+  <p>{{ a }} * {{ b }} = {{ results[2] }}</p>
+</div>
