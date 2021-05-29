@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.answer-box {
+  height: 80px;
+  margin: 8px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.answer-box.correct {
+  background: #8cc63f;
+  color: #476d16;
+}
+
+.answer-box.wrong {
+  background: #d00000;
+  color: #03071e;
+}
+
+h4 {
+  margin: 4px;
+}
+
+p {
+  margin: 4px;
+}

@@ -1,0 +1,24 @@
+h2 {
+  margin: 10px;
+  text-align: center;
+  color: #00aeef;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+li {
+  list-style: none;
+  padding-left: 10px;
+  font-size: 22px;
+  margin: 16px;
+  border: 3px solid #f06523;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f0a27e;
+}
+
+li:hover {
+  background: #e7dad4;
+}
