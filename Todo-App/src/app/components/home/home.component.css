@@ -1,0 +1,34 @@
+.home {
+  margin-top: 10px;
+  background-color: var(--PDark);
+  padding: 100px;
+  color: white;
+  text-align: center;
+}
+
+button {
+  margin: 8px;
+  color: var(--PDark);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary-li {
+  text-align: center;
+  margin: 40px;
+  padding: 10px;
+  color: var(--PLight);
+}
+
+.summary-li button {
+  cursor: auto;
+  background-color: none;
+  color: var(--PLight);
+}
+
+.mat-icon {
+  transform: scale(1.5);
+}

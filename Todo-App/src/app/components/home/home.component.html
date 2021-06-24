@@ -1,0 +1,19 @@
+<div class="home">
+  <h1>Todos App</h1>
+  <h2>by Tamir Atia</h2>
+  <h3>{{ currentDate | date: "dd-MM-yyyy" }}</h3>
+  <button (click)="createNewList()" mat-raised-button>create new list</button>
+  <button mat-raised-button (click)="goToLists()">view all lists</button>
+  <button mat-raised-button (click)="goToItems()">view all items</button>
+</div>
+
+<div class="summary">
+  <div *ngFor="let summery of summaries" class="summary-li">
+    <button mat-icon-button>
+      <mat-icon>{{ summery.icon }}</mat-icon>
+    </button>
+
+    <h1>{{ summery.counter }}</h1>
+    <h2>{{ summery.name }}</h2>
+  </div>
+</div>

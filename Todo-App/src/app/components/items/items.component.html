@@ -1,0 +1,22 @@
+<h2>Active Items</h2>
+<!-- <mat-card-content>
+  <section class="example-section">
+    <mat-checkbox class="items" [(ngModel)]="checked" color="warn"
+      >Checked</mat-checkbox
+    >
+
+    <mat-checkbox class="items" color="warn">Checked2</mat-checkbox>
+  </section>
+</mat-card-content> -->
+
+<mat-card-content>
+  <div *ngIf="items$ | async">
+    <div *ngFor="let item of items$ | async">
+      <section class="example-section">
+        <mat-checkbox class="items" [(ngModel)]="item.isCompleted" color="warn">
+          {{ item.caption }}
+        </mat-checkbox>
+      </section>
+    </div>
+  </div>
+</mat-card-content>

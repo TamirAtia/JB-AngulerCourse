@@ -1,0 +1,59 @@
+<div *ngIf="currentList$ | async as list">
+  <h2>Lists > {{ list.caption }}</h2>
+  <div class="rowDiv">
+    <mat-icon [ngStyle]="{ color: list.color }">{{ list.imgUrl }}</mat-icon>
+  </div>
+
+  <div class="btn-opt" *ngIf="!alertDelete">
+    <h3>{{ list.description }}</h3>
+
+    <button (click)="createNewList()" mat-raised-button="accent">
+      New List...
+    </button>
+    <button (click)="gotoEdit()" mat-raised-button="accent">Edit...</button>
+    <button (click)="DeleteListAlert()" mat-raised-button="accent" color="warn">
+      Delete
+    </button>
+  </div>
+
+  <div class="btn-opt" *ngIf="alertDelete">
+    <h2>Are you sure you want to delete the entire list?</h2>
+    <button (click)="DeleteListAlert()" mat-raised-button="accent">
+      Cancel
+    </button>
+    <button mat-raised-button="accent" color="warn" (click)="deleteList(list)">
+      Delete
+    </button>
+  </div>
+
+  <div class="items">
+    <mat-selection-list>
+      <mat-list-option
+        disableRipple="false"
+        *ngFor="let item of listItems$ | async"
+      >
+        {{ item.caption }}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <mat-checkbox class="checkbox-item"></mat-checkbox>
+
+    <mat-form-field class="example-form-field" [formGroup]="form">
+      <mat-label>Add a new item...</mat-label>
+      <input matInput type="text" formControlName="captionItem" />
+      <button
+        *ngIf="captionItem"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="captionItem = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <button mat-icon-button type="submit">
+        <mat-icon class="add item" (click)="addToList()">add</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>

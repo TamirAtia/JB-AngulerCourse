@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #c9b2ba;
+}
+
+a {
+  display: flex;
+  padding: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+a.onTab {
+  background-color: var(--PDark);
+}
+
+.seperator {
+  flex: 1;
+}
+
+.label {
+  align-self: center;
+  margin: 10px;
+}

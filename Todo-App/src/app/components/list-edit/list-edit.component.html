@@ -1,0 +1,63 @@
+<div class="card">
+  <form
+    #userInput="ngForm"
+    class="container"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field>
+      <mat-label>Caption</mat-label>
+      <input formControlName="Caption" matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea formControlName="Description" matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Icons</mat-label>
+      <mat-select formControlName="Icon">
+        <mat-select-trigger *ngIf="userInput.value.Icon === 'work'"
+          ><mat-icon>work</mat-icon></mat-select-trigger
+        >
+        <mat-select-trigger *ngIf="userInput.value.Icon === 'stars'"
+          ><mat-icon>stars</mat-icon></mat-select-trigger
+        >
+        <mat-select-trigger *ngIf="userInput.value.Icon === 'shopping_cart'"
+          ><mat-icon>shopping_cart</mat-icon></mat-select-trigger
+        >
+        <mat-select-trigger *ngIf="userInput.value.Icon === 'phone'"
+          ><mat-icon>phone</mat-icon></mat-select-trigger
+        >
+        <mat-select-trigger *ngIf="userInput.value.Icon === 'flagged'"
+          ><mat-icon>flagged</mat-icon></mat-select-trigger
+        >
+        <mat-option value="work"><mat-icon>work</mat-icon></mat-option>
+        <mat-option value="shopping_cart"
+          ><mat-icon>shopping_cart</mat-icon></mat-option
+        >
+        <mat-option value="stars"><mat-icon>stars</mat-icon></mat-option>
+        <mat-option value="phone"><mat-icon>phone</mat-icon></mat-option>
+        <mat-option value="flagged"><mat-icon>flagged</mat-icon></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <mat-select formControlName="Color">
+        <mat-option
+          [ngStyle]="{ color: i }"
+          *ngFor="let i of colors"
+          value="{{ i }}"
+        >
+          {{ i }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="form-row">
+      <button type="submit" mat-raised-button>save</button>
+    </div>
+  </form>
+</div>
